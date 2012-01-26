@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Set up build environment
+#
+# @see http://en.wikipedia.org/wiki/Configure_script
+set -o errexit
+
+gem install bundler --version "~> 1.0" --no-rdoc --no-ri
+bundle install

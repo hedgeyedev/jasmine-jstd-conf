@@ -18,7 +18,10 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
+  s.add_dependency('jasmine')
+  s.add_dependency('mustache', '~> 0.99.4')
+
+  s.add_development_dependency('bundler', '~> 1.0.0')
+  s.add_development_dependency('rake', '~> 0.8.7')
+  s.add_development_dependency('yard', '< 1.0.0')
 end
