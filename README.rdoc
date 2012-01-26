@@ -2,6 +2,10 @@
 
 Based on jasmine.yml, write a jsTestDriver config file to the supplied path.
 
+== Installation
+
+Please see http://rubygems.org/gems/jasmine-jstd-conf
+
 == Tutorial
 
     Usage: jasmine-jstd-conf path [--help]
