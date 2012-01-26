@@ -31,8 +31,8 @@ EOF
         end
     
         {
-          server: 'http://localhost:9876',
-          paths: paths,
+          :server => 'http://localhost:9876',
+          :paths => paths,
         }
       end
     
