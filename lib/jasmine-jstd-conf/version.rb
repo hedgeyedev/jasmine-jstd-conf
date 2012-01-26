@@ -1,5 +1,5 @@
 module Jasmine
-  module Jstd
+  module JSTD
     module Conf
       VERSION = "0.0.1"
     end

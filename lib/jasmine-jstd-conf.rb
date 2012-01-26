@@ -1,7 +1,7 @@
 require "jasmine-jstd-conf/version"
 
 module Jasmine
-  module Jstd
+  module JSTD
     module Conf
       # Your code goes here...
     end

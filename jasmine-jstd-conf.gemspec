@@ -4,7 +4,7 @@ require "jasmine-jstd-conf/version"
 
 Gem::Specification.new do |s|
   s.name        = "jasmine-jstd-conf"
-  s.version     = Jasmine::Jstd::Conf::VERSION
+  s.version     = Jasmine::JSTD::Conf::VERSION
   s.authors     = ["Benjamin Oakes"]
   s.email       = ["boakes@hedgeye.com"]
   s.homepage    = ""
