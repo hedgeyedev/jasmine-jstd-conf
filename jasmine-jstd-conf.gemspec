@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Benjamin Oakes"]
   s.email       = ["boakes@hedgeye.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Based on jasmine.yml, write a jsTestDriver config file to the supplied path.}
+  s.description = s.summary
 
   s.rubyforge_project = "jasmine-jstd-conf"
 
