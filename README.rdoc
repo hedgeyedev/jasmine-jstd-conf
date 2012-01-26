@@ -1,0 +1,3 @@
+= jasmine-jstd-conf
+
+Based on jasmine.yml, write a jsTestDriver config file to the supplied path.
