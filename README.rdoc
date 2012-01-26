@@ -13,7 +13,7 @@ Based on jasmine.yml, write a jsTestDriver config file to the supplied path.
     
     Example:
     
-      $ bin/jasmine-jstd-conf jsTestDriver.conf
+      $ jasmine-jstd-conf jsTestDriver.conf
       $ cat jsTestDriver.conf
       server: http://localhost:9876
       
