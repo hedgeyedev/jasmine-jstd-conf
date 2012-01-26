@@ -45,9 +45,30 @@ EOF
       end
     
       def self.show_usage
-        puts "Usage: #{$PROGRAM_NAME} path"
-        puts
-        puts "Based on jasmine.yml, write a JSTD config file to the supplied path."
+        puts <<EOF
+Usage: #{$PROGRAM_NAME} path [--help]
+
+  path        Path to write to.
+  --help      Show this help text.
+
+Based on jasmine.yml, write a JSTD config file to the supplied path.
+
+Example:
+
+  $ #{$PROGRAM_NAME} jsTestDriver.conf
+  $ cat jsTestDriver.conf
+  server: http://localhost:9876
+  
+  load:
+    - ../jasmine/lib/jasmine.js
+    - spec/javascripts/support/JasmineAdapter.js
+    - spec/javascripts/helpers/jasmine-jquery-1.3.1.js
+    - spec/javascripts/FooSpec.js
+    - spec/javascripts/BarSpec.js
+    - spec/javascripts/BazSpec.js
+    - spec/javascripts/QuxSpec.js
+  # [...]
+EOF
         exit -1
       end
     end

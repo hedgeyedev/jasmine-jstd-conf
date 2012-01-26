@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
 require 'jasmine-jstd-conf'
 
-if filename = ARGV[0]
+if ARGV.include?('--help')
+  Jasmine::JSTD::Conf.show_usage
+elsif filename = ARGV[0]
   Jasmine::JSTD::Conf.write(filename)
 else
   Jasmine::JSTD::Conf.show_usage
