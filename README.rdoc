@@ -4,7 +4,7 @@ Based on jasmine.yml, write a jsTestDriver config file to the supplied path.
 
 == Tutorial
 
-    Usage: bin/jasmine-jstd-conf path [--help]
+    Usage: jasmine-jstd-conf path [--help]
     
       path        Path to write to.
       --help      Show this help text.
