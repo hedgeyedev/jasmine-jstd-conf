@@ -54,7 +54,7 @@ module Jasmine
       end
 
       def self.locate_gem
-        spec = Bundler.load.specs.find{|s| s.name == 'jasmine-core' }
+        spec = Bundler.load.specs.find { |s| s.name == 'jasmine-core' }
         spec.full_gem_path
       end
 
