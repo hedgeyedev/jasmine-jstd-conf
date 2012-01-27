@@ -1,3 +1,7 @@
+== v0.0.3
+
+* Use a relative path to jasmine.js
+
 == v0.0.2
 
 * Obtain jasmine.js from the jasmine-core gem
