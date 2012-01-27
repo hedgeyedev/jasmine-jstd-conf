@@ -1,4 +1,10 @@
+# Standard lib
+require 'pathname'
+
+# Relative
 require "jasmine-jstd-conf/version"
+
+# Gems
 require 'rubygems'
 require 'bundler'
 require 'jasmine'
@@ -41,7 +47,10 @@ module Jasmine
       private
 
       def self.jasmine_js_path
-        "#{locate_gem}/lib/jasmine-core/jasmine.js"
+        # jsTestDriver can only use relative paths.  Not sure why...
+        absolute_path = "#{locate_gem}/lib/jasmine-core/jasmine.js"
+        relative_path = Pathname.new(absolute_path).relative_path_from(Pathname.pwd)
+        relative_path.to_s
       end
 
       def self.locate_gem
