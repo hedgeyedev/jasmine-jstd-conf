@@ -30,3 +30,11 @@ Please see http://rubygems.org/gems/jasmine-jstd-conf
         - spec/javascripts/BazSpec.js
         - spec/javascripts/QuxSpec.js
       # [...]
+
+== Contributing
+
+* Please make a pull request with your changes.
+* Please add specs for any new functionality.
+* Similar to other gems, a console can be opened with:
+
+    irb -I lib -r jasmine-jstd-conf
