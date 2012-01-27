@@ -12,6 +12,22 @@ Please see http://rubygems.org/gems/jasmine-jstd-conf
 
     {{>usage}}
 
+== Known Issues
+
+There is a bug in Jasmine (not this project) if your YAML parser happens to be +Psych+.  If you are affected by it, you will see an error message like:
+
+    lib/ruby/1.9.1/psych.rb:148:in `parse': couldn't parse YAML at line 56 column 5 (Psych::SyntaxError)
+
+The issue is that +Psych+ chokes on some YAML that other parsers do not.  In this case, the problem is the asterisk:
+
+    spec_files:
+      - **/*[sS]pec.js
+
+As a workaround, quote the string values:
+
+    spec_files:
+      - '**/*[sS]pec.js'
+
 == Contributing
 
 * Run <tt>./configure</tt> to set up your build environment
