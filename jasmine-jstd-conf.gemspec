@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
+  s.add_dependency('bundler') # For finding jasmine.js
   s.add_dependency('jasmine')
   s.add_dependency('mustache', '~> 0.99.4')
 

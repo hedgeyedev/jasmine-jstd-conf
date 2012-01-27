@@ -18,8 +18,18 @@ module Jasmine::JSTD
       it 'includes the files specified in the Jasmine config' do
         rendered = render
         
-        rendered.should match(%r{^  - spec/javascripts/FooSpec.rb})
-        rendered.should match(%r{^  - spec/javascripts/BarSpec.rb})
+        rendered.should match(%r{^  - spec/javascripts/FooSpec.rb$})
+        rendered.should match(%r{^  - spec/javascripts/BarSpec.rb$})
+      end
+
+      it 'includes jasmine.js from the jasmine-core gem' do
+        rendered = render
+        
+        md = rendered.match(%r{^  - (/.*?/jasmine.js)$})
+        md.should_not be_nil
+        jasmine_js_path = md[1]
+
+        File.exists?(jasmine_js_path).should be_true
       end
     end
   end
