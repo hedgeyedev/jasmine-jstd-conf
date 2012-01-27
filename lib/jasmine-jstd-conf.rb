@@ -7,16 +7,6 @@ require 'mustache'
 module Jasmine
   module JSTD
     module Conf
-      # This looks like YAML, but it's hard to be sure...
-      TEMPLATE = <<EOF
-server: {{server}}
-
-load:
-  {{#paths}}
-  - {{.}}
-  {{/paths}}
-EOF
-    
       def self.map(doc)
         paths = doc.js_files
     
@@ -36,7 +26,7 @@ EOF
       end
     
       def self.render
-        Mustache.render(TEMPLATE, map(Jasmine::Config.new))
+        Mustache.render(raw_mustache('conf'), map(Jasmine::Config.new))
       end
     
       def self.write(path)
@@ -44,30 +34,7 @@ EOF
       end
     
       def self.show_usage
-        puts <<EOF
-Usage: #{$PROGRAM_NAME} path [--help]
-
-  path        Path to write to.
-  --help      Show this help text.
-
-Based on jasmine.yml, write a JSTD config file to the supplied path.
-
-Example:
-
-  $ #{$PROGRAM_NAME} jsTestDriver.conf
-  $ cat jsTestDriver.conf
-  server: http://localhost:9876
-  
-  load:
-    - /path/to/jasmine.js
-    - spec/javascripts/support/JasmineAdapter.js
-    - spec/javascripts/helpers/jasmine-jquery-1.3.1.js
-    - spec/javascripts/FooSpec.js
-    - spec/javascripts/BarSpec.js
-    - spec/javascripts/BazSpec.js
-    - spec/javascripts/QuxSpec.js
-  # [...]
-EOF
+        puts Mustache.render(raw_mustache('usage'), {:program_name => $PROGRAM_NAME})
         exit -1
       end
 
@@ -80,6 +47,10 @@ EOF
       def self.locate_gem
         spec = Bundler.load.specs.find{|s| s.name == 'jasmine-core' }
         spec.full_gem_path
+      end
+
+      def self.raw_mustache(name)
+        File.read(File.join(File.dirname(__FILE__), "views/#{name}.mustache"))
       end
     end
   end

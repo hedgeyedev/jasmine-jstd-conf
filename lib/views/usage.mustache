@@ -1,0 +1,22 @@
+Usage: {{program_name}} path [--help]
+
+  path        Path to write to.
+  --help      Show this help text.
+
+Based on jasmine.yml, write a JSTD config file to the supplied path.
+
+Example:
+
+  $ {{program_name}} jsTestDriver.conf
+  $ cat jsTestDriver.conf
+  server: http://localhost:9876
+  
+  load:
+    - /path/to/jasmine.js
+    - spec/javascripts/support/JasmineAdapter.js
+    - spec/javascripts/helpers/jasmine-jquery-1.3.1.js
+    - spec/javascripts/FooSpec.js
+    - spec/javascripts/BarSpec.js
+    - spec/javascripts/BazSpec.js
+    - spec/javascripts/QuxSpec.js
+  # [...]
