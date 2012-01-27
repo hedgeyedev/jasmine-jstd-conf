@@ -33,6 +33,8 @@ Please see http://rubygems.org/gems/jasmine-jstd-conf
 
 == Contributing
 
+* Run <tt>./configure</tt> to set up your build environment
+* Run +rake+ to run specs
 * Please make a pull request with your changes.
 * Please add specs for any new functionality.
 * Similar to other gems, a console can be opened with:
