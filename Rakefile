@@ -12,7 +12,7 @@ task :readme do
 
   raw = File.read('lib/views/readme.rdoc.mustache')
   rendered = Mustache.render(raw,
-    Jasmine::JSTD::Conf.example.merge(:program_name => 'jasmine-jstd-conf'),
+    Jasmine::JSTD::Conf.example.merge(:program_name => 'jasmine-jstd-conf')
   )
 
   File.open('README.rdoc', 'w') { |f| f.puts(rendered) }
