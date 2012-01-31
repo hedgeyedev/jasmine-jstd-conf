@@ -10,7 +10,7 @@ desc 'Update README.rdoc using lib/views/readme.mustache'
 task :readme do
   require_relative './lib/jasmine-jstd-conf'
 
-  raw = File.read('lib/views/readme.mustache')
+  raw = File.read('lib/views/readme.rdoc.mustache')
   rendered = Mustache.render(raw,
     Jasmine::JSTD::Conf.example.merge(program_name: 'jasmine-jstd-conf'),
   )
