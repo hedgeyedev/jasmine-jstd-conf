@@ -31,7 +31,6 @@ Please see http://rubygems.org/gems/jasmine-jstd-conf
         - spec/javascripts/BarSpec.js
         - spec/javascripts/BazSpec.js
         - spec/javascripts/QuxSpec.js
-      # [...]
 
 == Known Issues
 

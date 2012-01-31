@@ -10,9 +10,26 @@ require 'bundler'
 require 'jasmine'
 require 'mustache'
 
+Mustache.template_path = 'lib/views'
+
 module Jasmine
   module JSTD
     module Conf
+      def self.example
+        {
+          :server => 'http://localhost:9876',
+          :paths => [ 
+            '../relative/path/to/jasmine.js',
+            'spec/javascripts/support/JasmineAdapter.js',
+            'spec/javascripts/helpers/jasmine-jquery-1.3.1.js',
+            'spec/javascripts/FooSpec.js',
+            'spec/javascripts/BarSpec.js',
+            'spec/javascripts/BazSpec.js',
+            'spec/javascripts/QuxSpec.js',
+          ]
+        }
+      end
+
       def self.map(doc)
         paths = doc.js_files
     
@@ -40,7 +57,7 @@ module Jasmine
       end
     
       def self.show_usage
-        puts Mustache.render(raw_mustache('usage'), {:program_name => $PROGRAM_NAME})
+        puts Mustache.render(raw_mustache('usage'), example.merge(:program_name => $PROGRAM_NAME))
         exit -1
       end
 
