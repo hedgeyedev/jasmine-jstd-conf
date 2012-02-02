@@ -17,3 +17,8 @@ task :readme do
 
   File.open('README.rdoc', 'w') { |f| f.puts(rendered) }
 end
+
+desc 'Open a console for interactive development'
+task :console do
+  system 'irb -I lib -r jasmine-jstd-conf'
+end
