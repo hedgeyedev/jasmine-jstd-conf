@@ -5,4 +5,4 @@ set -o errexit
 curl -so .roboconf.sh https://raw.github.com/hedgeyedev/roboconf/master/roboconf.sh
 source .roboconf.sh
 
-roboconf-bundler '~> 1.0.0'
+roboconf-bundler '~> 1.1.0'
