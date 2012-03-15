@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency('jasmine')
   s.add_dependency('mustache', '~> 0.99.4')
 
-  s.add_development_dependency('bundler', '~> 1.0.0')
+  s.add_development_dependency('bundler', '~> 1.1.0')
   s.add_development_dependency('rake', '~> 0.9.2')
   s.add_development_dependency('rspec', '~> 2.8.0')
   s.add_development_dependency('yard', '< 1.0.0')
